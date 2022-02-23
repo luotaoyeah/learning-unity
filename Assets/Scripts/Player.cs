@@ -7,12 +7,18 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myRigidBody = GetComponent<Rigidbody>();
+
         Debug.Log("START...");
     }
 
     // Update is called once per frame
     void Update()
     {
-        myRigidBody.AddForce(Vector3.right);
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        Debug.Log(h);
+
+        myRigidBody.MovePosition(new Vector3(h, 0, v) * 5);
     }
 }
