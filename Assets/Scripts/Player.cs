@@ -18,6 +18,6 @@ public class Player : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        myRigidBody.AddForce(new Vector3(h, 0, v) * 5);
+        myRigidBody.AddForce(new Vector3(h, 0, v) * 2);
     }
 }
