@@ -13,3 +13,4 @@
 - terrain            地形
 - intensity          强度
 - halo               光晕
+- tilt               俯仰, 上下摇摄
