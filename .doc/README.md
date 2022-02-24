@@ -12,3 +12,4 @@
 - orbit              环绕运行
 - terrain            地形
 - intensity          强度
+- halo               光晕
