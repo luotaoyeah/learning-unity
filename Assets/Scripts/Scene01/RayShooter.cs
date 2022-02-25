@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Scene01
@@ -10,6 +11,9 @@ namespace Scene01
         void Start()
         {
             myCamera = GetComponent<UnityEngine.Camera>();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         // Update is called once per frame
@@ -21,9 +25,33 @@ namespace Scene01
                 Ray ray = myCamera.ScreenPointToRay(point);
                 if (Physics.Raycast(ray, out var hit))
                 {
-                    Debug.Log(hit.point);
+                    StartCoroutine(SphereIndicator(hit.point));
                 }
             }
+        }
+
+        private void OnGUI()
+        {
+            int fontSize = 32;
+            float x = myCamera.pixelWidth / 2 - fontSize / 4;
+            float y = myCamera.pixelHeight / 2 - fontSize / 2;
+
+            GUI.Label(
+                new Rect(x, y, fontSize, fontSize),
+                "〇",
+                new GUIStyle()
+                {
+                    fontSize = fontSize,
+                }
+            );
+        }
+
+        private IEnumerator SphereIndicator(Vector3 position)
+        {
+            GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            sphere.transform.position = position;
+            yield return new WaitForSeconds(1);
+            Destroy(sphere);
         }
     }
 }
