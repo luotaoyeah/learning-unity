@@ -14,3 +14,5 @@
 - intensity          强度
 - halo               光晕
 - tilt               俯仰, 上下摇摄
+- diagonal           对角线的
+- magnitude          大小, 量级
