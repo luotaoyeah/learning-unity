@@ -2,9 +2,12 @@ using UnityEngine;
 
 namespace Scene01
 {
+    [RequireComponent(typeof(CharacterController))]
+    [AddComponentMenu("Luotao/FPSInput")]
     public class FPSInput : MonoBehaviour
     {
-        public float speed = 0.6f;
+        public float speed = 6f;
+        public float gravity = -9.8f;
         public CharacterController characterController;
 
         // Start is called before the first frame update
@@ -16,11 +19,11 @@ namespace Scene01
         // Update is called once per frame
         void Update()
         {
-            var deltaX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
-            var deltaZ = Input.GetAxis("Vertical") * speed * Time.deltaTime;
-
-            var movement = new Vector3(deltaX, 0, deltaZ);
+            var movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0, Input.GetAxis("Vertical") * speed);
             movement = Vector3.ClampMagnitude(movement, speed);
+
+            movement.y = gravity;
+            movement *= Time.deltaTime;
             movement = transform.TransformDirection(movement);
 
             characterController.Move(movement);
