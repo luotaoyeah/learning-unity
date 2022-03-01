@@ -23,9 +23,18 @@ namespace Scene01
             {
                 Vector3 point = new Vector3(myCamera.pixelWidth / 2, myCamera.pixelHeight / 2, 0);
                 Ray ray = myCamera.ScreenPointToRay(point);
-                if (Physics.Raycast(ray, out var hit))
+                if (Physics.Raycast(ray, out RaycastHit raycastHit))
                 {
-                    StartCoroutine(SphereIndicator(hit.point));
+                    GameObject targetgameObject = raycastHit.transform.gameObject;
+                    ReactiveTarget target = targetgameObject.GetComponent<ReactiveTarget>();
+                    if (target != null)
+                    {
+                        Debug.Log("HIT ENEMY");
+                    }
+                    else
+                    {
+                        StartCoroutine(SphereIndicator(raycastHit.point));
+                    }
                 }
             }
         }

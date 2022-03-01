@@ -10,9 +10,9 @@ scopes = {
 	"last_search.8040E7BB" = "package manage"
 	"OpenInspectorPreview.8040E7BB" = "0"
 	"currentGroup.8040E7BB" = "all"
-	"last_search.7BEC51F9" = "FOnt"
+	"last_search.7BEC51F9" = "package"
 	"OpenInspectorPreview.7BEC51F9" = "1"
-	"currentGroup.7BEC51F9" = "all"
+	"currentGroup.7BEC51F9" = "menu"
 }
 providers = {
 	adb = {
@@ -82,6 +82,7 @@ providers = {
 	}
 }
 recentSearches = [
+	"package"
 ]
 searchItemFavorites = [
 ]
