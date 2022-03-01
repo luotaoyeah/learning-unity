@@ -29,7 +29,7 @@ namespace Scene01
                     ReactiveTarget target = targetgameObject.GetComponent<ReactiveTarget>();
                     if (target != null)
                     {
-                        Debug.Log("HIT ENEMY");
+                        target.ReactToHit();
                     }
                     else
                     {
