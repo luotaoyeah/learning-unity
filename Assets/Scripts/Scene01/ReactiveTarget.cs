@@ -15,8 +15,17 @@ namespace Scene01
         {
         }
 
+        /**
+         * 被击中了.
+         */
         public void ReactToHit()
         {
+            WanderingAI behavior = GetComponent<WanderingAI>();
+            if (behavior != null)
+            {
+                behavior.SetAlive(false);
+            }
+
             StartCoroutine(Die());
         }
 
