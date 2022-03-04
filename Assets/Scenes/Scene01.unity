@@ -452,7 +452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bd8a5b24f58bdb4185740f25a477a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 6608829123494706136, guid: 98eb17dbca8db70409c01e158c2445df, type: 3}
+  enemyPrefab: {fileID: 6608829123494706136, guid: 98eb17dbca8db70409c01e158c2445df, type: 3}
 --- !u!1 &573788045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1288,6 +1288,7 @@ GameObject:
   - component: {fileID: 1945025466}
   - component: {fileID: 1945025467}
   - component: {fileID: 1945025468}
+  - component: {fileID: 1945025469}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1410,3 +1411,15 @@ MonoBehaviour:
   speed: 6
   gravity: -9.8
   characterController: {fileID: 0}
+--- !u!114 &1945025469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945025461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd631c6afe69d749a5522251aa0e19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
