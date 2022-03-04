@@ -43,15 +43,15 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
-     <Compile Include="Assets\Scripts\Scene01\SceneController.cs" />
-     <Compile Include="Assets\Scripts\Scene01\RayShooter.cs" />
-     <Compile Include="Assets\Scripts\Scene01\ReactiveTarget.cs" />
-     <Compile Include="Assets\Scripts\Scene01\Fireball.cs" />
-     <Compile Include="Assets\Scripts\Scene01\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\Scene02\SceneController.cs" />
+     <Compile Include="Assets\Scripts\Scene02\RayShooter.cs" />
+     <Compile Include="Assets\Scripts\Scene02\ReactiveTarget.cs" />
+     <Compile Include="Assets\Scripts\Scene02\Fireball.cs" />
+     <Compile Include="Assets\Scripts\Scene02\MouseLook.cs" />
      <Compile Include="Assets\Scripts\Scene00\HelloWorld.cs" />
-     <Compile Include="Assets\Scripts\Scene01\PlayerCharacter.cs" />
-     <Compile Include="Assets\Scripts\Scene01\WanderingAI.cs" />
-     <Compile Include="Assets\Scripts\Scene01\FPSInput.cs" />
+     <Compile Include="Assets\Scripts\Scene02\PlayerCharacter.cs" />
+     <Compile Include="Assets\Scripts\Scene02\WanderingAI.cs" />
+     <Compile Include="Assets\Scripts\Scene02\FPSInput.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
