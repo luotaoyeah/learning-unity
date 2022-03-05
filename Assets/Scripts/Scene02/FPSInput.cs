@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Scene01
+namespace Scene02
 {
     [RequireComponent(typeof(CharacterController))]
     [AddComponentMenu("Luotao/FPSInput")]

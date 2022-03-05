@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Scene01
+namespace Scene02
 {
     public class ReactiveTarget : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Scene01
+namespace Scene02
 {
     public class MouseLook : MonoBehaviour
     {
@@ -13,12 +13,13 @@ namespace Scene01
 
         public RotationAxes axes = RotationAxes.MouseXAndY;
 
-        public float horizontalSensitivity = 2f;
+        public float sensitivityHor = 9f;
+        public float sensitivityVert = 9f;
 
-        public float verticalSensitivity = 2f;
-        public float verticalRotation = 0;
-        private float maximumVerticalRotation = 45;
-        private float minimumVerticalRotation = -45;
+        private float minimumVert = -45f;
+        private float maximumVert = 45f;
+
+        public float verticalRot = 0;
 
         // Start is called before the first frame update
         void Start()
@@ -32,31 +33,32 @@ namespace Scene01
             {
                 case RotationAxes.MouseX:
                 {
-                    var y = Input.GetAxis("Mouse X") * horizontalSensitivity;
+                    var y = Input.GetAxis("Mouse X") * sensitivityHor;
+
                     transform.Rotate(0, y, 0);
+
+                    // 下面这种方式效果一样的
+                    // transform.localEulerAngles = new Vector3(0, transform.localEulerAngles.y + y, 0);
                     break;
                 }
 
                 case RotationAxes.MouseY:
                 {
-                    verticalRotation -= Input.GetAxis("Mouse Y") * verticalSensitivity;
-                    verticalRotation = Mathf.Clamp(verticalRotation, minimumVerticalRotation, maximumVerticalRotation);
+                    verticalRot -= Input.GetAxis("Mouse Y") * sensitivityVert;
+                    verticalRot = Mathf.Clamp(verticalRot, minimumVert, maximumVert);
 
-                    transform.localEulerAngles = new Vector3(verticalRotation, transform.localEulerAngles.y, 0);
+                    transform.localEulerAngles = new Vector3(verticalRot, transform.localEulerAngles.y, 0);
                     break;
                 }
 
                 case RotationAxes.MouseXAndY:
                 {
-                    verticalRotation -= Input.GetAxis("Mouse Y") * verticalSensitivity;
-                    verticalRotation = Mathf.Clamp(verticalRotation, minimumVerticalRotation, maximumVerticalRotation);
+                    var y = Input.GetAxis("Mouse X") * sensitivityHor;
 
-                    transform.localEulerAngles = new Vector3(
-                        verticalRotation,
-                        transform.localEulerAngles.y + Input.GetAxis("Mouse X") * horizontalSensitivity,
-                        0
-                    );
+                    verticalRot -= Input.GetAxis("Mouse Y") * sensitivityVert;
+                    verticalRot = Mathf.Clamp(verticalRot, minimumVert, maximumVert);
 
+                    transform.localEulerAngles = new Vector3(verticalRot, transform.localEulerAngles.y + y, 0);
                     break;
                 }
             }

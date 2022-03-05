@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Scene01
+namespace Scene02
 {
     public class Fireball : MonoBehaviour
     {
